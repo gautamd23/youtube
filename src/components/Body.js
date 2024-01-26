@@ -5,7 +5,8 @@ import VideoContainerBody from './VideoContainerBody'
 
 export default function Body() {
   return (
-    <div>
+    <div className='flex w-full justify-between'>
+    
         <SideBar/>
         <VideoContainerBody/>
     </div>

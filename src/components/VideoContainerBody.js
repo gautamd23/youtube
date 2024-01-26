@@ -4,7 +4,7 @@ import VideoContainer from './VideoContainer'
 
 export default function VideoContainerBody() {
   return (
-    <div>
+    <div className='w-[86%]'>
         <ButtonList/>
         <VideoContainer/>
     </div>
