@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function SideBar() {
+  const isMenuOpen = useSelector((store)=>store.menu.isMenuOpen);
+
+  if(!isMenuOpen) return null
   return (
     <div className="w-[14%]">
       <div className="px-3 pb-1 py-2">
@@ -43,6 +47,11 @@ export default function SideBar() {
           <li>Gaming</li>
           <li>News</li>
         </ul>
+        <hr></hr>
+      </div>
+      <div className="px-3 pb-1 py-2">
+        <p className="py-1 text-sm">Browse Channel</p>
+        <hr></hr>
       </div>
     </div>
   );

@@ -1,11 +1,20 @@
 import React from "react";
 import hamImg from '../Assets/hamburger.png';
-import userLogo from "../Assets/user.png"
+import userLogo from "../Assets/user.png";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
+
+
 export default function Head() {
+  
+  const dispatch = useDispatch()
+  function handleMenuToggle() {
+    dispatch(toggleMenu())
+  }
   return (
     <div className="px-3 pt-3 w-full flex justify-between items-center">
       <div className="flex gap-8">
-        <img className="w-5" src={hamImg} />
+        <img className="w-5 cursor-pointer" src={hamImg} onClick={handleMenuToggle}/>
         <img className="w-24" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"></img>
       </div>
       <div>

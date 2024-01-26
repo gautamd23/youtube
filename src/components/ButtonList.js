@@ -1,7 +1,10 @@
 import React from 'react'
+import Button from './Button'
 
 export default function ButtonList() {
   return (
-    <div>ButtonList</div>
+    <div className='flex mt-3 overflow-scroll'>
+      <Button/>
+    </div>
   )
 }
