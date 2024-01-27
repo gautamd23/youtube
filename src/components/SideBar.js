@@ -6,7 +6,7 @@ export default function SideBar() {
 
   if(!isMenuOpen) return null
   return (
-    <div className="w-[14%]">
+    <div className="w-full px-3">
       <div className="px-3 pb-1 py-2">
         <ul className="py-1 text-sm">
           <li>Home</li>

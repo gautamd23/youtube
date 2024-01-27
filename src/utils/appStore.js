@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appSlice from './appSlice'
+import videoSlice from "./videoSlice";
 
 
 const appStore = configureStore({
     reducer:{
-        menu:appSlice
+        menu:appSlice,
+        video:videoSlice
     }
 })
 
