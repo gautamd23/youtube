@@ -3,6 +3,7 @@ import { YOUTUBE_API } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addVideos } from "../utils/videoSlice";
 import VideoCard from "./VideoCard";
+import { Link } from "react-router-dom";
 
 export default function VideoContainer() {
   const videos = useSelector((store) => store.video?.videos);
@@ -17,9 +18,15 @@ export default function VideoContainer() {
     console.log(json);
     dispatch(addVideos(json?.items));
   }
-  return <div className="flex flex-wrap ">
-    {videos?.map((video)=>{
-      return <VideoCard info={video}/>
-    })}
-  </div>;
+  return (
+    <div className="flex flex-wrap ">
+      {videos?.map((video) => {
+        return (
+          <Link to={"/watch?v=" + video.id}>
+            <VideoCard info={video} />
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
